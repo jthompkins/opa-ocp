@@ -1,0 +1,29 @@
+{
+    "apiVersion" : "continuous-integration/1.0.0",
+    "kind": "Workflow Attestation",
+    "metadata": { 
+        "repository": "source-code-repo-name",
+        "branch": "source-code-branch",
+        "commit": "source-code-commit",
+        "tag": "source-code-tag"
+    },
+    "workflow": {
+        "unitTest": {
+            "name": "Unit Tests",
+            "software": "maven",
+            "attestations": { 
+                "testQuantity": 50,
+                "passQuantity": 50 
+            }
+        },
+        "staticCodeAnalysis": {
+            "name": "Static Code Analysis",
+            "software": "sonarqube",
+            "attestations": { 
+                "codeCoverage": 80,
+                "cyclomaticComplexity": 30 
+            }
+        }
+    },
+    "boe": "https://some.com/link/to/a/file.zip"
+}
